@@ -7,27 +7,25 @@ export const Login = () => {
     const onChangeHandler = (event)=>{
 
         username= event.target.value
+        localStorage.setItem("username",username)
         console.log(username)
     }
 
 
-    const onClickHandler = ()=>{
-
+    const onSubmitHandler = ()=>{
+        event.preventDefault()
         window.location = "/report"
     }
 
   return (
     <div>
-        <form>
+        <form onSubmit={onSubmitHandler}>
     <div className="mb-3">
       <label className="form-label">Username</label>
       <input onChange={onChangeHandler} type="text" className="form-control" />
-      <div  className="form-text">We'll never share your email with anyone else.</div>
+      
     </div>
-    <div className="mb-3">
-      <label  className="form-label">Password</label>
-      <input type="password" className="form-control" />
-    </div>
+  
     <button type="submit" className="btn btn-primary">Submit</button>
   </form>
   </div>
