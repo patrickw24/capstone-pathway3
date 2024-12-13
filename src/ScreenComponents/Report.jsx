@@ -28,23 +28,25 @@ export const Report = () => {
 
   return (
     <>
-      <div className="container">
-        <div className="row">
-          {posts.map((item) => (
-            <div className="col-3">
-              <div className="card text-center mb-3 mr-3">
-                <div className="card-header">{item.name}</div>
-                <div className="card-body">
-                  <h5 className="card-title">{item.position}</h5>
-                  <p className="card-text">Department: {item.department}</p>
-                  <p>Hire Date: {item.hire_date}</p>
-                </div>
-                <div className="card-footer text-body-secondary">
-                  2 days ago
+      <div className="container-fluid">
+        <div className="row justify-content-center">
+          <div className="row">
+            {posts.map((item) => (
+              <div className="col-sm-3">
+                <div className="card text-center mb-3 mr-3">
+                  <div className="card-header">{item.name}</div>
+                  <div className="card-body">
+                    <h5 className="card-title">{item.position}</h5>
+                    <p className="card-text">Department: {item.department}</p>
+                    <p>Hire Date: {item.hire_date}</p>
+                  </div>
+                  <div className="card-footer text-body-secondary">
+                    2 days ago
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </>
