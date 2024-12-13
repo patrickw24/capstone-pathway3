@@ -5,6 +5,7 @@ import { LoginWall } from './Components/LoginWall'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ReportWall } from './Components/ReportWall'
 import { NavBar } from './ScreenComponents/Navbar'
+import { AddEmployee } from './Components/AddEmployee'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Routes>
       <Route path= "/" element={<LoginWall />}></Route>   
       <Route path= "/report" element={<ReportWall username={user}/>}></Route> 
+      <Route path= "/form" element={<AddEmployee />}></Route> 
 
       </Routes>
       </BrowserRouter>
