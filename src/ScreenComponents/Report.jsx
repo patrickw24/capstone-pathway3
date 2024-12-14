@@ -7,7 +7,10 @@ export const Report = () => {
   const token = import.meta.env.VITE_TOKEN;
 
   const getEmployees = async () => {
-    let response = await fetch(url, {
+
+
+    let newURL = `${url}?order=name.asc`
+    let response = await fetch(newURL, {
       method: "GET",
       headers: {
         apikey: token,
@@ -41,7 +44,7 @@ export const Report = () => {
                     <p>Hire Date: {item.hire_date}</p>
                   </div>
                   <div className="card-footer text-body-secondary">
-                    2 days ago
+                    Patrick and Co.
                   </div>
                 </div>
               </div>
