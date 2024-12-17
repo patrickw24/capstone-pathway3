@@ -9,6 +9,8 @@ export const Form = () => {
   const [employeePostion, setEmployeePostion] = useState("")
   const [employeeDepartment, setEmployeeDepartment] = useState("")
   const [employeeDate, setEmployeeDate] = useState("")
+  const [message, setMessage] = useState("")
+  
 
   const nameChange = (event) => {
     setemployeeName(event.target.value)
@@ -48,6 +50,15 @@ export const Form = () => {
     
     if (response.ok) {
       console.log("element created")
+      setemployeeName("");
+      setEmployeePostion("");
+      setEmployeeDepartment("");
+      setEmployeeDate("");
+      setMessage(
+        <h1>
+        Your employee has been added! Click the following link to view the updated employee database: <a href="#/report"> Click Here </a>
+        </h1>
+      )
       
     } else {
       let err = await response.json();
@@ -61,7 +72,7 @@ export const Form = () => {
         <form onSubmit={submitHandler}>
           <div className="mb-3">
             <label className="form-label">Name</label>
-            <input onChange={nameChange} type="text" className="form-control" />
+            <input onChange={nameChange} type="text" className="form-control" value={employeeName} />
           </div>
           <div className="mb-3">
             <label className="form-label">Postion</label>
@@ -69,6 +80,7 @@ export const Form = () => {
               onChange={namePostion}
               type="text"
               className="form-control"
+              value={employeePostion}
             />
           </div>
           <div className="mb-3">
@@ -77,6 +89,7 @@ export const Form = () => {
               onChange={nameDepartment}
               type="text"
               className="form-control"
+              value={employeeDepartment}
             />
           </div>
           <div className="mb-3">
@@ -85,12 +98,14 @@ export const Form = () => {
               onChange={nameHireDate}
               type="date"
               className="form-control"
+              value={employeeDate}
             />
           </div>
-          <button className="btn btn-success" type="submit">
+          <button className="btn btn-success w-100" type="submit">
             Add Employee
           </button>
         </form>
+        <p>{message}</p>
       </div>
     </div>
   );

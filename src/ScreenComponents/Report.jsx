@@ -25,6 +25,26 @@ export const Report = () => {
     }
   };
 
+  const deleteEmployee = async(id)=>{
+
+    let newUrl = `${url}?id=eq.${id}`
+
+    let response = await fetch(newUrl,{
+      method:'DELETE',
+      headers:{
+        'apikey': token,
+        'Authorization': token,
+      }
+    })
+    if(response.ok){
+      console.log("Object deleted")
+      getEmployees()
+    }else{
+      let err = await response.json()
+      console.log(err)
+    }
+  }
+
   useEffect(() => {
     getEmployees();
   }, []);
@@ -35,7 +55,7 @@ export const Report = () => {
         <div className="row justify-content-center">
           <div className="row">
             {posts.map((item) => (
-              <div className="col-sm-3">
+              <div key= {item.id} className="col-sm-3">
                 <div className="card text-center mb-3 mr-3">
                   <div className="card-header">{item.name}</div>
                   <div className="card-body">
@@ -44,7 +64,10 @@ export const Report = () => {
                     <p>Hire Date: {item.hire_date}</p>
                   </div>
                   <div className="card-footer text-body-secondary">
-                    Patrick and Co.
+                    Patrick and Co. 
+                  </div>
+                  <div>
+                  <button onClick={() => deleteEmployee(item.id)} className="btn btn-danger w-100">Delete</button>
                   </div>
                 </div>
               </div>

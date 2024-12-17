@@ -18,6 +18,7 @@ export const Login = () => {
     }
 
   return (
+    
     <div>
         <form onSubmit={onSubmitHandler}>
     <div className="mb-3">
@@ -26,8 +27,9 @@ export const Login = () => {
       
     </div>
   
-    <button type="submit" className="btn btn-primary">Submit</button>
+    <button type="submit" className="btn btn-primary w-100">Log In</button>
   </form>
   </div>
+  
   )
 }

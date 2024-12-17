@@ -11,10 +11,10 @@ export const NavBar = ()=>{
     <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/report">Reports</a>
+          <a className="nav-link active" aria-current="page" href="#/report">Reports</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/form">Add Employee</a>
+          <a className="nav-link" href="#/form">Add Employee</a>
         </li>
       </ul>
     </div>
