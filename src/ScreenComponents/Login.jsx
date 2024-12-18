@@ -14,7 +14,7 @@ export const Login = () => {
 
     const onSubmitHandler = ()=>{
         event.preventDefault()
-        window.location = "/report"
+        window.location = "/#report"
     }
 
   return (
