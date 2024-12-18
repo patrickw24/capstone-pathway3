@@ -105,7 +105,7 @@ export const Form = () => {
             Add Employee
           </button>
         </form>
-        <p>{message}</p>
+        <div>{message}</div>
       </div>
     </div>
   );

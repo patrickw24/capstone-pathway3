@@ -4,9 +4,16 @@ import { useState, useEffect } from "react";
 
 export const ReportWall = ({ username }) => {
 
-    const [message, setMessage] = useState("Employee Database")
+    const [message, setMessage] = useState(username)
 
-    const welcomeMessage = ()=>{
+    const getUser = ()=>{
+      const updatedUser = localStorage.getItem("username")
+    }
+
+    useEffect(() => {
+
+      window.location = "/#report"
+
       if(!username){
         setMessage(
           
@@ -20,10 +27,7 @@ export const ReportWall = ({ username }) => {
           
         )
       }
-    }
 
-    useEffect(() => {
-      welcomeMessage()
     }, [username])
     
     console.log(message)
