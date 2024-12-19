@@ -4,13 +4,13 @@ import { useState, useEffect } from "react";
 
 export const ReportWall = () => {
 
-    const [message, setMessage] = useState(username)
+    const [message, setMessage] = useState("username")
 
     useEffect(() => {
       let user = localStorage.getItem("username")
       
 
-      if(!username){
+      if(!user){
         setMessage(
           
             `Employee Database`
@@ -24,7 +24,7 @@ export const ReportWall = () => {
         )
       }
 
-    }, [username])
+    }, [])
     
     
 
