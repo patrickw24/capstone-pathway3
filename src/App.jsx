@@ -9,7 +9,7 @@ import { AddEmployee } from "./Components/AddEmployee";
 import { HashRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-  let user = localStorage.getItem("username");
+ 
 
   return (
     <>
@@ -19,7 +19,7 @@ function App() {
           <Route path="/" element={<LoginWall />} />
           <Route
             path="/report"
-            element={<ReportWall username={user} />}
+            element={<ReportWall />}
           />
           <Route path="/form" element={<AddEmployee />}></Route>
         </Routes>

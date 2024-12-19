@@ -2,17 +2,13 @@ import React from "react";
 import { Report } from "../ScreenComponents/Report";
 import { useState, useEffect } from "react";
 
-export const ReportWall = ({ username }) => {
+export const ReportWall = () => {
 
     const [message, setMessage] = useState(username)
 
-    const getUser = ()=>{
-      const updatedUser = localStorage.getItem("username")
-    }
-
     useEffect(() => {
-
-      window.location = "/#report"
+      let user = localStorage.getItem("username")
+      
 
       if(!username){
         setMessage(
@@ -23,14 +19,14 @@ export const ReportWall = ({ username }) => {
       }else{
         setMessage(
           
-            `Welcome back, ${username}!`
+            `Welcome back, ${user}!`
           
         )
       }
 
     }, [username])
     
-    console.log(message)
+    
 
   return (
     <div>
